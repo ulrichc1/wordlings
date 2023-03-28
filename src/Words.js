@@ -20,7 +20,6 @@ export const boardDefault = [
         todaysWord = wordArr[Math.floor(Math.random() * wordArr.length)];
         wordSet = new Set(wordArr);
       });
-    console.log(wordSet,todaysWord);
     return { wordSet, todaysWord };
   };
 
@@ -35,7 +34,6 @@ export const boardDefault = [
         wordSet = new Set(wordArr);
         console.log(wordArr, todaysWord);
       });
-    console.log(wordSet,todaysWord);
     return { wordSet, todaysWord };
   };
   

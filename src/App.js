@@ -24,14 +24,12 @@ function App() {
   useEffect(() => {
     if (language === "fr"){
     generateWordSetFR().then((words) => {
-      console.log(words);
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
     });}
 
     else {
     generateWordSetEN().then((words) => {
-        console.log(words);
         setWordSet(words.wordSet);
         setCorrectWord(words.todaysWord);
       });
@@ -46,7 +44,6 @@ function App() {
     }
     
     setCurrAttempt({attempt: currAttempt.attempt+1,letterPos:0});
-    console.log(correctWord,currWord.toLowerCase());
     if (correctWord.toLowerCase().trim() === currWord.toLowerCase().trim()){
       setWordFound(true);
     }
