@@ -153,21 +153,21 @@ function App() {
     <Board/>
     {gameOver && !wordFound && (language == "en") && 
       <div className="finished"><h2> GAME OVER ! The word was : {correctWord} </h2>
-        <button className="btn-restart" onClick={() => onRestart()}> RESTART </button>
+        <button className="btn-restart" onClick={() => onRestart("en")}> RESTART </button>
       </div>}
     {wordFound && (language == "en") && 
       <div className="finished"><h2> CONGRATS ! The word was : {correctWord} </h2>
       <h3> found in : {currAttempt.attempt} attempts. </h3>
-        <button className="btn-restart" onClick={() => onRestart()}> RESTART </button>
+        <button className="btn-restart" onClick={() => onRestart("en")}> RESTART </button>
       </div>}
     {gameOver && !wordFound && (language == "fr") && 
       <div className="finished"><h2> PERDU ! Le mot était : {correctWord} </h2>
-        <button className="btn-restart" onClick={() => onRestart()}> REJOUER </button>
+        <button className="btn-restart" onClick={() => onRestart("fr")}> REJOUER </button>
       </div>}
     {wordFound && (language == "fr") && 
       <div className="finished"><h2> TROUVÉ ! Le mot était : {correctWord} </h2>
       <h3> trouvé en: {currAttempt.attempt} essais. </h3>
-      <button className="btn-restart" onClick={() => onRestart()}> REJOUER </button>
+      <button className="btn-restart" onClick={() => onRestart("fr")}> REJOUER </button>
       </div>}
 
     {!wordFound && !gameOver && <Keyboard language={language}/>}
