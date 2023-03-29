@@ -37,6 +37,22 @@ function App() {
   }, []);
 
   const onEnter = () => {
+    // trimming des mots du wordSet
+    let wordSetTrimmed = new Set();
+    wordSet.forEach((word) => {
+          wordSetTrimmed.add(word.trim());
+        }
+    );
+ // si le mot saisi par l'utilisateur n'est pas dans le wordSet on alerte l'utilisateur
+    if (!wordSetTrimmed.has(newBoard[currAttempt.attempt].join("").toLowerCase().trim())){
+      if (language === "fr") alert("Mot non valide");
+      if (language === "en") alert("Invalid word");
+        // on efface la ligne et l'utilisateur recommence
+        newBoard[currAttempt.attempt] = ["", "", "", "", ""];
+        setBoard(newBoard);
+        setCurrAttempt({attempt: currAttempt.attempt,letterPos:0});
+        return;
+    }
     if (currAttempt.letterPos !== 5) return;
     let currWord = "";
     for (let i = 0; i<5; i++){
