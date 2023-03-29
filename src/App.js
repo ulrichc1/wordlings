@@ -128,29 +128,29 @@ function App() {
     <div className="App">
       <nav>
       <h1>Wordlings</h1>
-      {(language==="fr")&& <button onClick={() => handleLanguage("en")}> EN </button>}
-      {(language==="en")&& <button onClick={() => handleLanguage("fr")}> FR </button>}
+      {(language==="fr")&& <button class="btn-language" onClick={() => handleLanguage("en")}> FR </button>}
+      {(language==="en")&& <button class="btn-language" onClick={() => handleLanguage("fr")}> EN </button>}
       </nav>
     <div className='wordle'>
     <AppContext.Provider  value={{ board, setBoard, currAttempt, setCurrAttempt, onEnter, onRemove, onSelectLetter, correctWord, disabledLetters, setDisabledLetters }}>
     <Board/>
     {gameOver && !wordFound && (language == "en") && 
-      <div><h2> GAME OVER ! The word was : {correctWord} </h2>
-      <button onClick={() => onRestart()}> RESTART </button>
+      <div className="finished"><h2> GAME OVER ! The word was : {correctWord} </h2>
+        <button className="btn-restart" onClick={() => onRestart()}> RESTART </button>
       </div>}
     {wordFound && (language == "en") && 
-      <div><h2> CONGRATS ! The word was : {correctWord} </h2>
+      <div className="finished"><h2> CONGRATS ! The word was : {correctWord} </h2>
       <h3> found in : {currAttempt.attempt} attempts. </h3>
-      <button onClick={() => onRestart()}> RESTART </button>
+        <button className="btn-restart" onClick={() => onRestart()}> RESTART </button>
       </div>}
     {gameOver && !wordFound && (language == "fr") && 
-      <div><h2> PERDU ! Le mot était : {correctWord} </h2>
-      <button onClick={() => onRestart()}> RESTART </button>
+      <div className="finished"><h2> PERDU ! Le mot était : {correctWord} </h2>
+        <button className="btn-restart" onClick={() => onRestart()}> REJOUEZ </button>
       </div>}
     {wordFound && (language == "fr") && 
-      <div><h2> TROUVÉ ! Le mot était : {correctWord} </h2>
+      <div className="finished"><h2> TROUVÉ ! Le mot était : {correctWord} </h2>
       <h3> trouvé en: {currAttempt.attempt} essais. </h3>
-      <button onClick={() => onRestart()}> RESTART </button>
+      <button className="btn-restart" onClick={() => onRestart()}> REJOUEZ </button>
       </div>}
 
     {!wordFound && !gameOver && <Keyboard language={language}/>}

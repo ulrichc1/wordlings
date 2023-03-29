@@ -29,7 +29,7 @@ export const boardDefault = [
     await fetch(wordFRBank)
       .then((response) => response.text())
       .then((result) => {
-        const wordArr = result.split("\n").filter(word => word.length === 6);
+        const wordArr = result.split("\n")
         todaysWord = wordArr[Math.floor(Math.random() * wordArr.length)];
         wordSet = new Set(wordArr);
         console.log(wordArr, todaysWord);
