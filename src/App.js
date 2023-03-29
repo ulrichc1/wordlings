@@ -162,12 +162,12 @@ function App() {
       </div>}
     {gameOver && !wordFound && (language == "fr") && 
       <div className="finished"><h2> PERDU ! Le mot était : {correctWord} </h2>
-        <button className="btn-restart" onClick={() => onRestart()}> REJOUEZ </button>
+        <button className="btn-restart" onClick={() => onRestart()}> REJOUER </button>
       </div>}
     {wordFound && (language == "fr") && 
       <div className="finished"><h2> TROUVÉ ! Le mot était : {correctWord} </h2>
       <h3> trouvé en: {currAttempt.attempt} essais. </h3>
-      <button className="btn-restart" onClick={() => onRestart()}> REJOUEZ </button>
+      <button className="btn-restart" onClick={() => onRestart()}> REJOUER </button>
       </div>}
 
     {!wordFound && !gameOver && <Keyboard language={language}/>}
