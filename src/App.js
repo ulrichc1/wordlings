@@ -86,7 +86,6 @@ function App() {
     currAttempt.letterPos = 0;
     setDisabledLetters([]);
     generateWordSetEN().then((words) => {
-      console.log(words);
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
     });
@@ -111,14 +110,12 @@ function App() {
     ]);
     if (language === "en"){
     generateWordSetEN().then((words) => {
-      console.log(words);
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
     });
   }
   else {
     generateWordSetFR().then((words) => {
-      console.log(words);
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
     });
@@ -128,8 +125,8 @@ function App() {
     <div className="App">
       <nav>
       <h1>Wordlings</h1>
-      {(language==="fr")&& <button class="btn-language" onClick={() => handleLanguage("fr")}> FR </button>}
-      {(language==="en")&& <button class="btn-language" onClick={() => handleLanguage("en")}> EN </button>}
+      {(language==="fr")&& <button class="btn-language" onClick={() => handleLanguage("en")}> FR </button>}
+      {(language==="en")&& <button class="btn-language" onClick={() => handleLanguage("fr")}> EN </button>}
       </nav>
     <div className='wordle'>
     <AppContext.Provider  value={{ board, setBoard, currAttempt, setCurrAttempt, onEnter, onRemove, onSelectLetter, correctWord, disabledLetters, setDisabledLetters }}>
