@@ -128,8 +128,8 @@ function App() {
     <div className="App">
       <nav>
       <h1>Wordlings</h1>
-      {(language==="fr")&& <button class="btn-language" onClick={() => handleLanguage("en")}> FR </button>}
-      {(language==="en")&& <button class="btn-language" onClick={() => handleLanguage("fr")}> EN </button>}
+      {(language==="fr")&& <button class="btn-language" onClick={() => handleLanguage("fr")}> FR </button>}
+      {(language==="en")&& <button class="btn-language" onClick={() => handleLanguage("en")}> EN </button>}
       </nav>
     <div className='wordle'>
     <AppContext.Provider  value={{ board, setBoard, currAttempt, setCurrAttempt, onEnter, onRemove, onSelectLetter, correctWord, disabledLetters, setDisabledLetters }}>
