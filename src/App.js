@@ -21,6 +21,8 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [wordFound, setWordFound] = useState(false);
 
+  console.log("language: ", language);
+  
   useEffect(() => {
     if (language === "fr"){
     generateWordSetFR().then((words) => {
