@@ -240,3 +240,6 @@ pitre
 crane
 brume
 piece
+piege
+perdu
+juron
