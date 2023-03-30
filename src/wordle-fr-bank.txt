@@ -212,3 +212,13 @@ baron
 ragot
 argot
 tarot
+exact
+arret
+venus
+plage
+brute
+crete
+trois
+douze
+seize
+vingt
