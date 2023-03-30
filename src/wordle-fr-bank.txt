@@ -234,3 +234,9 @@ celte
 balle
 petit
 geant
+crime
+plume
+pitre
+crane
+brume
+piece
