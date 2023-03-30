@@ -6,6 +6,27 @@ import './Components/styles/wordle.css';
 import { useEffect, useState } from 'react';
 import { boardDefault,generateWordSetEN,generateWordSetFR } from './Words';
 import { createContext } from 'react';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBmqA21SMEqhDzvVk0frGHBq9zFWSAKuRA",
+  authDomain: "wordlings-2e2d1.firebaseapp.com",
+  projectId: "wordlings-2e2d1",
+  storageBucket: "wordlings-2e2d1.appspot.com",
+  messagingSenderId: "29944407859",
+  appId: "1:29944407859:web:0267cfcd8ea43f4d158046",
+  measurementId: "G-YHD7JTWYJC"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 export const AppContext = createContext();
 
@@ -93,8 +114,8 @@ function App() {
   }
   
   const handleLanguage = (language) => {
-    setLanguage(language);
-    setBoard([
+    // Timeout pour éviter que le changement de langue ne soit pas pris en compte
+    setTimeout(() => {  setLanguage(language); setBoard([
       ["", "", "", "", ""],
       ["", "", "", "", ""],
       ["", "", "", "", ""],
@@ -102,15 +123,25 @@ function App() {
       ["", "", "", "", ""],
       ["", "", "", "", ""],
     ]);
-    currAttempt.attempt = 0;
-    currAttempt.letterPos = 0;
-    setDisabledLetters([]);
-    generateWordSetEN().then((words) => {
-      setWordSet(words.wordSet);
-      setCorrectWord(words.todaysWord);
+      currAttempt.attempt = 0;
+      currAttempt.letterPos = 0;
+      setDisabledLetters([]);
+if (language === "en") {
+  generateWordSetEN().then((words) => {
+    setWordSet(words.wordSet);
+    setCorrectWord(words.todaysWord);
+  });
+}
+if (language === "fr") {
+    generateWordSetFR().then((words) => {
+        setWordSet(words.wordSet);
+        setCorrectWord(words.todaysWord);
     });
-    setWordFound(false);
-    setGameOver(false);
+}
+      setWordFound(false);
+      setGameOver(false);
+      }, 100);
+
   }
   
 

@@ -33,7 +33,6 @@ joies
 jouet
 joues
 jurer
-klaxo
 koala
 kraft
 kakis
@@ -224,3 +223,6 @@ douze
 seize
 vingt
 amour
+treve
+huile
+video
