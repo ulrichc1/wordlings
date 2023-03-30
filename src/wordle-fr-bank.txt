@@ -226,3 +226,11 @@ amour
 treve
 huile
 video
+galet
+roche
+vigne
+serbe
+celte
+balle
+petit
+geant
