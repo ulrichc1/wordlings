@@ -1,4 +1,3 @@
-
 abois
 avare
 asile
@@ -243,3 +242,13 @@ piece
 piege
 perdu
 juron
+terne
+fumer
+fumee
+pisse
+peser
+maree
+songe
+signe
+reine
+linge
