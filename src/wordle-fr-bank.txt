@@ -252,3 +252,4 @@ songe
 signe
 reine
 linge
+clone
