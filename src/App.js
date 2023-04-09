@@ -12,18 +12,6 @@ import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBmqA21SMEqhDzvVk0frGHBq9zFWSAKuRA",
-  authDomain: "wordlings-2e2d1.firebaseapp.com",
-  projectId: "wordlings-2e2d1",
-  storageBucket: "wordlings-2e2d1.appspot.com",
-  messagingSenderId: "29944407859",
-  appId: "1:29944407859:web:0267cfcd8ea43f4d158046",
-  measurementId: "G-YHD7JTWYJC"
-};
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
